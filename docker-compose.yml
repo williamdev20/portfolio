@@ -10,7 +10,7 @@ services:
       - db
     restart: always
     volumes:
-      - ./media:/core/media
+      - ./backend/media:/core/media
 
   db:
     image: postgres:18
