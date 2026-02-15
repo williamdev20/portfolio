@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
-import CredentialCard from "./cards/CredentialCard"
-import arrow from "../assets/arrows/arrow.png"
+import { useState, useEffect } from "react";
+import api from "../api/api";
+import CredentialCard from "./cards/CredentialCard";
+import arrow from "../assets/arrows/arrow.png";
 
 const certificados = [
     {
@@ -42,6 +43,18 @@ const certificados = [
 ]
 
 export default function Certification() {
+    const [certifications, setCertifications] = useState([]);
+
+    const getCertifications = async () => {
+        const response = await api.get("/certifications/");
+        setCertifications(response.data);
+        console.log(response);
+    }
+
+    useEffect(() => {
+        getCertifications();
+    }, []);
+
     const [index, setIndex] = useState(0);
     const [visibles, setVisibles] = useState(4);
 
@@ -95,16 +108,17 @@ export default function Certification() {
                         className="flex flex-row gap-5 transition-transform duration-500 ease-in-out"
                         style={{ transform: `translateX(-${index * (cardWidth + gap)}px)` }}
                     >
-                        {certificados.map((certificado, i) => (
-                            <CredentialCard
-                                key={i}
-                                img={certificado.img}
-                                title={certificado.title}
-                                desc={certificado.desc}
-                                credential={certificado.credential}
-                                cardWidth={cardWidth}
-                            />
-                        ))}
+                        {certifications &&
+                            certifications.map((certification) => (
+                                <CredentialCard key={certification.id}
+                                    img={certification.image}
+                                    title={certification.title}
+                                    period={certification.period}
+                                    credential={certification.credential_link}
+                                    cardWidth={cardWidth}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import external_link from "../../assets/links/external-link.svg"
 
-export default function Card({ img, title, stack, desc, github, link }) {
+export default function Card({ img, title, stack, desc, github, site }) {
     return (
         <div className="border-2 border-white rounded-xl bg-gray-200 w-100 min-h-113 transition hover:-translate-y-2 hover:shadow-2xl hover:border-[#2a221f] relative">
             <img className="rounded-t-xl w-full h-48 object-cover" src={img} />
@@ -25,7 +25,7 @@ export default function Card({ img, title, stack, desc, github, link }) {
                             alt="GitHub"
                         />
                     </a>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
+                    <a href={site} target="_blank" rel="noopener noreferrer">
                         <img className="w-7 h-7 transition hover:-translate-y-2" src={external_link} alt="Link do projeto" />
                     </a>
                 </div>

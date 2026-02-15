@@ -4,4 +4,4 @@ from projects.models import Project
 
 class ProjectListView(ListAPIView):
     serializer_class = ProjectSerializer
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by("priority")
