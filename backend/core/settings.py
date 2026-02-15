@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "projects",
     "certifications",
+    "mail",
 ]
 
 MIDDLEWARE = [
@@ -83,14 +84,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-DATABASES = {
-    'default': dj_database_url.parse(
-        DATABASE_URL,
-        conn_max_age=60,
-        conn_health_checks=True,
-        ssl_require=False
-    )
-}
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=60,
+            conn_health_checks=True,
+            ssl_require=False
+        )
+    }
 
 
 # Password validation
@@ -131,3 +133,13 @@ STATIC_URL = 'static/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# SMTP Configs
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+
+EMAIL_TO = os.getenv("EMAIL_TO")
