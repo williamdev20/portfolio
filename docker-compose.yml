@@ -1,26 +1,13 @@
 services:
-  backend:
-    build: ./backend
-    container_name: backend
-    env_file:
-      - ./backend/.env
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-    restart: always
-    volumes:
-      - ./backend/media:/core/media
-
   db:
-    image: postgres:18
+    image: postgres:17-bookworm
     container_name: db
     ports:
       - 5432:5432
     env_file:
       - .env
     volumes:
-      - db-data:/var/lib/postgresql
+      - db-data:/var/lib/postgresql/data
   
 volumes:
   db-data:
