@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "corsheaders",
+    "anymail",
     "rest_framework",
     "projects",
     "certifications",
@@ -180,6 +181,18 @@ CLOUDINARY_STORAGE = {
 }
 
 
+# Resend API HTTP Configs
+
+EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
+
+ANYMAIL = {
+    "RESEND_API_KEY": os.getenv("RESEND_API_KEY"),
+}
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
+
+
+
+"""
 # SMTP Configs
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -187,6 +200,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+"""
 
 EMAIL_TO = os.getenv("EMAIL_TO")
 

@@ -21,7 +21,7 @@ class MailView(APIView):
         email_message = EmailMessage(
             subject=f"NOVA MENSAGEM DE: {name} - {email}",
             body=f"MENSAGEM:\n{message}",
-            from_email=settings.EMAIL_HOST_USER,
+            from_email=settings.DEFAULT_FROM_EMAIL,
             to=[settings.EMAIL_TO],
             reply_to=[email]
         )

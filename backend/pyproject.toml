@@ -8,6 +8,7 @@ dependencies = [
     "cloudinary>=1.44.1",
     "dj-database-url>=3.1.0",
     "django>=6.0.2",
+    "django-anymail[resend]>=14.0",
     "django-cloudinary-storage>=0.3.0",
     "django-cors-headers>=4.9.0",
     "django-ratelimit>=4.1.0",
