@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <>
-            <nav className="fixed top-0 inset-x-0 bg-[#789048]/70 flex flex-row items-center w-full p-4 z-20 gap-5">
+            <nav className="fixed top-0 inset-x-0 bg-[#789048]/70 flex flex-row items-center p-4 z-20 gap-5">
                 <h2 className="text-white text-xl sm:text-2xl sm:mr-auto">
                     <a href="#hero">{"<WA />"}</a>
                 </h2>
@@ -46,7 +46,7 @@ export default function Header() {
             </nav>
 
             {menu && (
-                <div className="fixed top-17 left-0 right-0 bg-[#789048]/70 flex flex-col items-center w-full z-30 gap-5 p-4">
+                <div className="fixed top-17 left-0 right-0 bg-[#789048]/70 flex flex-col items-center z-30 gap-5 p-4">
                     <h2 className="text-white text-lg sm:text-xl underline">
                         <a href="#sobre" onClick={() => setMenu(false)}>Sobre</a>
                     </h2>
