@@ -111,10 +111,10 @@ export default function Contact() {
                         <a href="https://mailto:william.alves.developer@gmail.com" className="text-lg">william.alves.developer@gmail.com</a>
                         <h3 className="text-2xl">Redes</h3>
                         <div className="flex flex-row gap-5">
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/williamalves20/">
                                 <img className="w-8 h-8 transition hover:-translate-y-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
                             </a>
-                            <a href="">
+                            <a href="https://github.com/williamdev20">
                                 <img className="bg-white rounded-2xl w-8 h-8 transition hover:-translate-y-1" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
                             </a>
                         </div>
@@ -128,10 +128,10 @@ export default function Contact() {
                         <a href="https://mailto:williamalvs45@gmail.com" className="text-lg">william.alves.developer@gmail.com</a>
                         <h3 className="text-2xl">Redes</h3>
                         <div className="flex flex-row gap-5">
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/williamalves20/">
                                 <img className="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
                             </a>
-                            <a href="">
+                            <a href="https://github.com/williamdev20">
                                 <img className="bg-white rounded-2xl w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
                             </a>
                         </div>
