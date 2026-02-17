@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "projects",
     "certifications",
     "mail",
+    "utils",
 ]
 
 MIDDLEWARE = [
