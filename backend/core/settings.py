@@ -76,7 +76,8 @@ ROOT_URLCONF = 'core.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://williamalvesdev.vercel.app"
 ]
 
 TEMPLATES = [
@@ -190,6 +191,7 @@ ANYMAIL = {
 }
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 
+EMAIL_TO = os.getenv("EMAIL_TO")
 
 
 """
@@ -201,8 +203,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 """
-
-EMAIL_TO = os.getenv("EMAIL_TO")
 
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
