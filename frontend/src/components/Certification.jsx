@@ -48,7 +48,6 @@ export default function Certification() {
     const getCertifications = async () => {
         const response = await api.get("/certifications/");
         setCertifications(response.data);
-        console.log(response);
     }
 
     useEffect(() => {
@@ -75,17 +74,17 @@ export default function Certification() {
     }, [])
 
     useEffect(() => {
-        if (index + visibles > certificados.length) {
-            setIndex(certificados.length - visibles)
+        if (index + visibles > certifications.length) {
+            setIndex(Math.max(0, certifications.length - visibles))
         }
-    }, [visibles])
+    }, [visibles, certifications.length])
 
     const next = () => {
         setIndex((prev) => {
-            if (prev + visibles >= certificados.length) return prev;
+            if (prev + visibles >= certifications.length) return prev;
             return prev + 1;
-        })
-    }
+        });
+    };
 
     const previous = () => {
        setIndex((prev) => {
@@ -99,7 +98,7 @@ export default function Certification() {
             <h2 className="text-center text-white text-5xl mt-10 mb-auto font-bold">Certificações</h2>
 
             <div className="flex flex-row gap-5 items-center mb-auto">
-                <button className="cursor-pointer" type="button" onClick={previous}>
+                <button className="cursor-pointer md:m-2" type="button" onClick={previous}>
                     <img className="w-10 h-10 bg-white hover:bg-gray-100 rounded-4xl" src={arrow} alt="arrow" />
                 </button>
 
@@ -122,8 +121,8 @@ export default function Certification() {
                     </div>
                 </div>
 
-                <button className="cursor-pointer" type="button" onClick={next}>
-                    <img className="w-10 h-10 rotate-180 bg-white rounded-4xl" src={arrow} alt="arrow" />
+                <button className="cursor-pointer md:m-2" type="button" onClick={next}>
+                    <img className="w-10 h-10 rotate-180 bg-white hover:bg-gray-100 rounded-4xl" src={arrow} alt="arrow" />
                 </button>
             </div>
         </section>

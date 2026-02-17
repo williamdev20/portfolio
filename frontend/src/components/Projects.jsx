@@ -13,7 +13,6 @@ export default function Projects() {
     const getProjects = async () => {
         const response = await api.get("/projects/");
         setProjects(response.data);
-        console.log(response);
     }
 
     useEffect(() => {
