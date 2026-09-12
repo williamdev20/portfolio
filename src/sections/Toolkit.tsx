@@ -21,9 +21,8 @@ export default function ToolKit() {
             id="tecnologias-heading"
             className="text-4xl font-bold leading-tight text-[#E5E2D9] sm:text-5xl"
           >
-            Minha Stack
+            Minha <span className="text-[#B87852]">Stack.</span>
             <br />
-            <span className="text-[#B87852]">que uso.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-[#9BA394]">
             Tecnologias que fazem parte do meu dia a dia e que venho aprimorando na prática, através de projetos reais.
